@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepak Tempo Service — Parcel Transport Management System (PTMS)</title>
+  <meta name="description" content="Enterprise Parcel Transport & Logistics Management System by Deepak Tempo Service. Track parcels, manage fleet, generate bilties, and handle COD collections.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       PUBLIC LANDING PAGE (Home / Information Page)
+       ======================================================================== -->
+  <div id="publicLandingPage" class="active">
+
+    <!-- Hero Section -->
+    <section class="landing-hero">
+      <nav class="landing-nav">
+        <div class="landing-logo">
+          <div class="landing-logo-icon">
+            <span class="material-symbols-outlined">local_shipping</span>
+          </div>
+          <div class="landing-logo-text">
+            <span class="landing-logo-name">Deepak Tempo Service</span>
+            <span class="landing-logo-tagline">Fleet Owners & Transport Contractors</span>
+          </div>
+        </div>
+        <div class="landing-nav-links">
+          <a href="#services" onclick="document.getElementById('servicesSection').scrollIntoView({behavior:'smooth'})">Services</a>
+          <a href="#calculator" onclick="document.getElementById('calculatorSection').scrollIntoView({behavior:'smooth'})">Price Calculator</a>
+          <a href="#contact" onclick="document.getElementById('contactSection').scrollIntoView({behavior:'smooth'})">Contact</a>
+          <button class="btn-login" onclick="app.showLoginPortal()">
+            <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: -3px;">login</span>
+            Staff Login
+          </button>
+        </div>
+      </nav>
+
+      <div class="landing-hero-content">
+        <div class="hero-text">
+          <h1>India's Trusted <span class="amber">Logistics Partner</span> for Gujarat Corridor</h1>
+          <p>Enterprise-grade parcel transport & fleet management across Surat, Bardoli, Navsari, and South Gujarat's industrial corridors. Real-time tracking, digital bilty (LR), and automated COD settlement.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" style="padding: 14px 28px; font-size: 15px;" onclick="app.showLoginPortal()">
+              <span class="material-symbols-outlined" style="font-size: 20px;">rocket_launch</span>
+              Get Started
+            </button>
+            <button class="btn btn-outline" style="padding: 14px 28px; font-size: 15px; background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.15);" onclick="document.getElementById('calculatorSection').scrollIntoView({behavior:'smooth'})">
+              <span class="material-symbols-outlined" style="font-size: 20px;">calculate</span>
+              Calculate Price
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number">15K+</span>
+              <span class="hero-stat-label">Parcels Delivered</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">98.6%</span>
+              <span class="hero-stat-label">On-Time Rate</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">4</span>
+              <span class="hero-stat-label">Fleet Vehicles</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-tracking-card">
+            <h3>
+              <span class="material-symbols-outlined">share_location</span>
+              Track Your Parcel
+            </h3>
+            <div class="track-search-row">
+              <input type="text" id="publicTrackInput" placeholder="Enter Waybill Number (e.g. PTMS-202610-XXXXXX)">
+              <button onclick="app.publicTrack()">
+                <span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+                Track
+              </button>
+            </div>
+            <div id="publicTrackResult" style="display:none; margin-top: 16px;"></div>
+            <div class="hero-feature-list">
+              <div class="hero-feature-item">
+                <div class="feature-icon"><span class="material-symbols-outlined">verified</span></div>
+                <span>Digital Lorry Receipt (Bilty) & E-Way Bill Ready</span>
+              </div>
+              <div class="hero-feature-item">
+                <div class="feature-icon"><span class="material-symbols-outlined">payments</span></div>
+                <span>COD Collection & Freight Settlement</span>
+              </div>
+              <div class="hero-feature-item">
+                <div class="feature-icon"><span class="material-symbols-outlined">draw</span></div>
+                <span>Digital Proof of Delivery with Signature</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicesSection" class="landing-section" style="background: var(--bg-root);">
+      <h2>Our Transport Services</h2>
+      <p class="section-subtitle">Complete logistics solutions from Surat's industrial hub to every doorstep across Gujarat and beyond.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-icon"><span class="material-symbols-outlined">local_shipping</span></div>
+          <h3>Express Tempo Delivery</h3>
+          <p>Same-day and next-day delivery across South Gujarat. Direct express tempo from Kadodara to Bardoli, Navsari, Vyara, and Surat city.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><span class="material-symbols-outlined">inventory_2</span></div>
+          <h3>Full Truck Load (FTL)</h3>
+          <p>Dedicated 14-feet Eicher LCV for bulk textile consignments, industrial machinery parts, and heavy freight loads up to 2.5 MT.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><span class="material-symbols-outlined">warehouse</span></div>
+          <h3>Hub-to-Hub Transit</h3>
+          <p>Kadodara Central Transshipment Hub connects to Surat Main Depot, Hazira Industrial Hub, and regional distribution centers.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><span class="material-symbols-outlined">receipt_long</span></div>
+          <h3>Digital Bilty (LR) Generation</h3>
+          <p>Instant digital Lorry Receipt with barcode, GSTIN compliance, volumetric weight calculation, and freight tariff breakdown.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><span class="material-symbols-outlined">payments</span></div>
+          <h3>COD & Freight Settlement</h3>
+          <p>Cash on Delivery collection with automated reconciliation, daily cash ledger, and transparent billing for all consignments.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><span class="material-symbols-outlined">share_location</span></div>
+          <h3>Real-Time Tracking</h3>
+          <p>Live shipment tracking with milestone updates, SMS notifications, proof of delivery with digital signature capture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parcel Price Calculator Section -->
+    <section id="calculatorSection" class="landing-section" style="background: var(--bg-low);">
+      <h2>Parcel Price Calculator</h2>
+      <p class="section-subtitle">Get an instant freight estimate for your consignment. Enter package details below.</p>
+      <div class="price-calc-container">
+        <div class="price-calc-grid">
+          <div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Origin City</label>
+                <select id="calcOrigin" class="form-select" onchange="app.calcPublicPrice()">
+                  <option value="Surat" selected>Surat</option>
+                  <option value="Kadodara">Kadodara</option>
+                  <option value="Hazira">Hazira</option>
+                  <option value="Bardoli">Bardoli</option>
+                  <option value="Navsari">Navsari</option>
+                  <option value="Vyara">Vyara</option>
+                  <option value="Sachin GIDC">Sachin GIDC</option>
+                  <option value="Pandesara">Pandesara</option>
+                  <option value="Palsana">Palsana</option>
+                  <option value="Chalthan">Chalthan</option>
+                  <option value="Mandvi">Mandvi</option>
+                  <option value="Kamrej">Kamrej</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Destination City</label>
+                <select id="calcDest" class="form-select" onchange="app.calcPublicPrice()">
+                  <option value="Bardoli" selected>Bardoli</option>
+                  <option value="Navsari">Navsari</option>
+                  <option value="Vyara">Vyara</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Ahmedabad">Ahmedabad</option>
+                  <option value="Vadodara">Vadodara</option>
+                  <option value="Rajkot">Rajkot</option>
+                  <option value="Vapi">Vapi</option>
+                  <option value="Ankleshwar">Ankleshwar</option>
+                  <option value="Bharuch">Bharuch</option>
+                  <option value="Bilimora">Bilimora</option>
+                  <option value="Surat">Surat (Local)</option>
+                  <option value="Sachin GIDC">Sachin GIDC</option>
+                  <option value="Pandesara">Pandesara</option>
+                  <option value="Palsana">Palsana</option>
+                  <option value="Chalthan">Chalthan</option>
+                  <option value="Mandvi">Mandvi</option>
+                  <option value="Kamrej">Kamrej</option>
+                  <option value="Songadh">Songadh</option>
+                  <option value="Nizar">Nizar</option>
+                  <option value="Mahuva">Mahuva</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Package Weight (kg) *</label>
+              <input type="number" id="calcWeight" class="form-input font-mono" value="25" min="0.5" step="0.5" oninput="app.calcPublicPrice()">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Length (cm)</label>
+                <input type="number" id="calcLength" class="form-input font-mono" value="50" min="1" oninput="app.calcPublicPrice()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Width (cm)</label>
+                <input type="number" id="calcWidth" class="form-input font-mono" value="40" min="1" oninput="app.calcPublicPrice()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Height (cm)</label>
+                <input type="number" id="calcHeight" class="form-input font-mono" value="30" min="1" oninput="app.calcPublicPrice()">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Service Type</label>
+              <select id="calcService" class="form-select" onchange="app.calcPublicPrice()">
+                <option value="Direct Express Tempo" selected>Direct Express Tempo (LTL)</option>
+                <option value="Standard Ground Transit">Standard Ground Transit</option>
+                <option value="Full Truck Load (FTL)">Full Truck Load (FTL)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="price-result-box">
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; margin-bottom: 4px;">Volumetric Weight</div>
+              <div class="font-mono" style="font-size: 20px; font-weight: 700; color: #cbd5e1;" id="calcPubVolWeight">12.0 kg</div>
+            </div>
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; margin-bottom: 4px;">Billable Weight</div>
+              <div class="font-mono" style="font-size: 20px; font-weight: 700; color: #fff;" id="calcPubBillWeight">25.0 kg</div>
+            </div>
+            <div style="padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; margin-bottom: 8px;">Estimated Freight Charge</div>
+              <div class="price-amount" id="calcPubTotal">₹555</div>
+              <div class="price-label">*GST included. Actual charges may vary.</div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 24px; padding: 14px;" onclick="app.showLoginPortal()">
+              <span class="material-symbols-outlined">post_add</span>
+              Book This Consignment
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / About Section -->
+    <section id="contactSection" class="landing-section" style="background: var(--bg-root);">
+      <h2>Contact & Business Information</h2>
+      <p class="section-subtitle">Reach us for bulk transport contracts, fleet partnerships, or booking inquiries.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div class="content-card" style="padding: 32px;">
+          <h3 style="font-size: 18px; font-weight: 800; color: var(--text-main); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-outlined" style="color: var(--brand-amber);">business</span>
+            Business Details
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
+            <div><strong>Proprietor:</strong> Deepak Singh</div>
+            <div><strong>GSTIN:</strong> <span class="font-mono">24COZPS7273E2Z5</span></div>
+            <div><strong>Mobile:</strong> <span class="font-mono">98246 21221</span> / <span class="font-mono">70961 47585</span></div>
+            <div><strong>Address:</strong> Abhinandan Nagar, Near Telephone Exchange, Chalthan, Kadodara, Tal. Palsana, Dist. Surat - 394305</div>
+            <div><strong>Service Area:</strong> Surat, Bardoli, Navsari, Vyara, Kadodara, Hazira, Sachin GIDC, Pandesara, Palsana, Chalthan, Mandvi, Kamrej, Songadh, Vapi, Ankleshwar, Bharuch, Bilimora, Vadodara, Ahmedabad, Mumbai, Rajkot</div>
+          </div>
+        </div>
+        <div class="content-card" style="padding: 32px;">
+          <h3 style="font-size: 18px; font-weight: 800; color: var(--text-main); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-outlined" style="color: var(--brand-amber);">schedule</span>
+            Operating Hours
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
+            <div><strong>Monday – Saturday:</strong> 8:00 AM – 10:00 PM</div>
+            <div><strong>Sunday:</strong> 9:00 AM – 6:00 PM (Emergency Only)</div>
+            <div><strong>Dispatch Shifts:</strong> 06:00–14:00, 14:00–22:00</div>
+            <div><strong>Hub Location:</strong> Kadodara Central Transshipment Hub</div>
+            <div style="margin-top: 8px;">
+              <button class="btn btn-primary" onclick="window.open('tel:+919824621221')">
+                <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
+                Call Now: 98246 21221
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Deepak Tempo Service</h3>
+          <div class="tagline">Fleet Owners & Transport Contractors</div>
+          <p>Enterprise parcel transport and fleet management across Gujarat's industrial corridors. Powered by Kadodara Central Transshipment Hub.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#">Express Tempo Delivery</a>
+          <a href="#">Full Truck Load (FTL)</a>
+          <a href="#">Hub-to-Hub Transit</a>
+          <a href="#">COD Collection</a>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#" onclick="document.getElementById('calculatorSection').scrollIntoView({behavior:'smooth'})">Price Calculator</a>
+          <a href="#" onclick="app.showLoginPortal()">Staff Login</a>
+          <a href="#" onclick="app.showLoginPortal()">Customer Portal</a>
+          <a href="#" onclick="document.getElementById('contactSection').scrollIntoView({behavior:'smooth'})">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Head Office</h4>
+          <a href="#">Kadodara, Dist. Surat</a>
+          <a href="#">Gujarat - 394305</a>
+          <a href="tel:+919824621221">📞 98246 21221</a>
+          <a href="tel:+917096147585">📞 70961 47585</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Deepak Tempo Service. All rights reserved. GSTIN: 24COZPS7273E2Z5</span>
+        <span>Powered by PTMS v1.0</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ========================================================================
+       LOGIN PORTAL PAGE
+       ======================================================================== -->
+  <div id="loginPortalPage">
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-card-header">
+          <div class="login-logo">
+            <span class="material-symbols-outlined" style="color: #fff; font-size: 28px;">local_shipping</span>
+          </div>
+          <h2>Welcome Back</h2>
+          <p>Sign in to Deepak Tempo Service PTMS</p>
+        </div>
+
+        <!-- Login Tabs -->
+        <div class="login-tabs">
+          <button class="login-tab active" onclick="app.switchLoginTab('staff')">Staff Portal</button>
+          <button class="login-tab" onclick="app.switchLoginTab('customer')">Customer Portal</button>
+        </div>
+
+        <div id="loginErrorMsg" class="login-error-msg"></div>
+
+        <form id="loginPortalForm" onsubmit="app.handlePortalLogin(event)">
+          <div class="login-form-group">
+            <label>Username / Email / Mobile</label>
+            <input type="text" id="loginPortalUser" placeholder="Enter your username" required autocomplete="username">
+          </div>
+          <div class="login-form-group">
+            <label>Password</label>
+            <input type="password" id="loginPortalPass" placeholder="Enter your password" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="login-submit-btn">
+            <span class="material-symbols-outlined" style="font-size: 20px;">login</span>
+            Sign In
+          </button>
+        </form>
+
+        <div class="login-aux-links">
+          <a href="#" onclick="app.showForgotPassword()">Forgot Password?</a>
+          <span class="login-aux-divider">|</span>
+          <a href="#" onclick="app.showRegister()">Create Customer Account</a>
+        </div>
+
+        <div class="demo-credentials">
+          <h4>Quick Demo Access</h4>
+          <div class="demo-cred-row" onclick="app.demoLogin('admin','admin123')">
+            <span class="role">👤 Admin (Deepak Singh)</span>
+            <span class="creds">admin / admin123</span>
+          </div>
+          <div class="demo-cred-row" onclick="app.demoLogin('booking','book123')">
+            <span class="role">📝 Booking Staff</span>
+            <span class="creds">booking / book123</span>
+          </div>
+          <div class="demo-cred-row" onclick="app.demoLogin('hub','hub123')">
+            <span class="role">🏭 Hub / Operations</span>
+            <span class="creds">hub / hub123</span>
+          </div>
+          <div class="demo-cred-row" onclick="app.demoLogin('dispatcher','dispatch123')">
+            <span class="role">🚛 Dispatcher</span>
+            <span class="creds">dispatcher / dispatch123</span>
+          </div>
+          <div class="demo-cred-row" onclick="app.demoLogin('driver','driver123')">
+            <span class="role">🧑‍✈️ Driver</span>
+            <span class="creds">driver / driver123</span>
+          </div>
+          <div class="demo-cred-row" onclick="app.demoLogin('accounts','acc123')">
+            <span class="role">💰 Accounts Staff</span>
+            <span class="creds">accounts / acc123</span>
+          </div>
+        </div>
+
+        <div class="login-back-link">
+          <a href="#" onclick="app.showLanding()">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       APP CONTAINER (Dashboard - Visible after login)
+       ======================================================================== -->
+  <div id="appContainer">
+    <div class="app-layout">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="app-sidebar" id="appSidebar">
+        <div class="sidebar-header">
+          <div class="brand-logo-mark">
+            <span class="material-symbols-outlined" style="font-size: 22px;">local_shipping</span>
+          </div>
+          <div class="brand-details">
+            <div class="brand-name">Deepak Tempo</div>
+            <div class="brand-subtitle">PTMS Control Hub</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-title">Logistics Engine</div>
+        <ul class="sidebar-nav" id="sidebarNav">
+          <li>
+            <a class="nav-link active" data-view="dashboard" onclick="app.switchView('dashboard')">
+              <span class="nav-icon"><span class="material-symbols-outlined">grid_view</span></span>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" data-view="booking" onclick="app.switchView('booking')">
+              <span class="nav-icon"><span class="material-symbols-outlined">post_add</span></span>
+              <span>Book Consignment</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" data-view="tracking" onclick="app.switchView('tracking')">
+              <span class="nav-icon"><span class="material-symbols-outlined">share_location</span></span>
+              <span>Live Tracking</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" data-view="shipments" onclick="app.switchView('shipments')">
+              <span class="nav-icon"><span class="material-symbols-outlined">inventory_2</span></span>
+              <span>All Consignments</span>
+              <span class="nav-badge" id="sidebarShipmentCount">0</span>
+            </a>
+          </li>
+          <li data-requires-role="Admin,Dispatcher,Hub/Operations Staff">
+            <a class="nav-link" data-view="fleet" onclick="app.switchView('fleet')">
+              <span class="nav-icon"><span class="material-symbols-outlined">rv_hookup</span></span>
+              <span>Fleet Operations</span>
+            </a>
+          </li>
+          <li data-requires-role="Admin,Driver,Dispatcher">
+            <a class="nav-link" data-view="pod" onclick="app.switchView('pod')">
+              <span class="nav-icon"><span class="material-symbols-outlined">fact_check</span></span>
+              <span>Proof of Delivery</span>
+            </a>
+          </li>
+          <li data-requires-role="Admin,Accounts Staff,Booking Staff">
+            <a class="nav-link" data-view="billing" onclick="app.switchView('billing')">
+              <span class="nav-icon"><span class="material-symbols-outlined">receipt_long</span></span>
+              <span>Billing &amp; COD</span>
+            </a>
+          </li>
+          <li data-requires-role="Admin,Booking Staff,Accounts Staff">
+            <a class="nav-link" data-view="customers" onclick="app.switchView('customers')">
+              <span class="nav-icon"><span class="material-symbols-outlined">groups</span></span>
+              <span>Customers</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" data-view="history" onclick="app.switchView('history')">
+              <span class="nav-icon"><span class="material-symbols-outlined">monitoring</span></span>
+              <span>Reports &amp; Audit</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Sidebar Footer: Network + User + Logout -->
+        <div class="sidebar-footer">
+          <div class="network-status-box">
+            <div class="net-status-header">
+              <span>Network Status</span>
+              <span class="live-pulse-dot"></span>
+            </div>
+            <div class="net-status-title">Surat Hub Relay Online</div>
+            <div class="net-status-sub font-mono">Dispatch frequency: 12m</div>
+          </div>
+        </div>
+
+        <div class="sidebar-logout-section">
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-avatar">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <div>
+              <div class="sidebar-user-name" id="sidebarUserName">Deepak Singh</div>
+              <div class="sidebar-user-role" id="sidebarUserRole">Administrator</div>
+            </div>
+          </div>
+          <button class="logout-btn" onclick="app.logout()">
+            <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN APP COLUMN -->
+      <div class="main-column">
+
+        <!-- TOP NAVIGATION BAR -->
+        <header class="top-navbar">
+          <div class="nav-left-actions">
+            <button class="menu-toggle-btn" onclick="app.toggleSidebar()" title="Toggle Navigation">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="global-search-container">
+              <span class="material-symbols-outlined global-search-icon">search</span>
+              <input type="text" id="globalTrackingSearch" class="global-search-input" placeholder="Search LR No, Vehicle, Consignee or Mobile... (⌘K)" autocomplete="off">
+              <div id="globalSearchResults" style="display: none; position: absolute; top: 44px; left: 0; right: 0; background: #fff; border: 1px solid var(--border-strong); border-radius: 8px; box-shadow: var(--shadow-lg); z-index: 200; max-height: 320px; overflow-y: auto;"></div>
+            </div>
+            <div class="hub-selector-pill">
+              <span class="material-symbols-outlined" style="font-size: 18px; color: var(--brand-amber);">store</span>
+              <select id="hubSelector">
+                <option value="kadodara" selected>Kadodara Regional Hub</option>
+                <option value="surat">Surat Main Depot</option>
+                <option value="hazira">Hazira Industrial Hub</option>
+                <option value="bardoli">Bardoli Distribution Centre</option>
+                <option value="navsari">Navsari Transit Hub</option>
+                <option value="vyara">Vyara Regional Hub</option>
+                <option value="sachin">Sachin GIDC Hub</option>
+                <option value="pandesara">Pandesara GIDC Hub</option>
+                <option value="palsana">Palsana Hub</option>
+                <option value="kamrej">Kamrej Hub</option>
+                <option value="vapi">Vapi Industrial Hub</option>
+                <option value="ankleshwar">Ankleshwar GIDC Hub</option>
+                <option value="bharuch">Bharuch Transit Hub</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="nav-right-actions">
+            <button class="btn btn-primary btn-sm" onclick="app.switchView('booking')">
+              <span class="material-symbols-outlined" style="font-size: 17px;">add</span>
+              <span>New Consignment</span>
+            </button>
+            <div class="user-profile-badge" title="Logged-in User">
+              <div class="user-avatar-circle">
+                <span class="material-symbols-outlined" style="font-size: 17px;">person</span>
+              </div>
+              <div class="user-text-info">
+                <span class="user-display-name" id="userDisplayName">Deepak Singh</span>
+                <span class="user-role-tag" id="userRoleTag">Administrator</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- MAIN WORKSPACE CONTENT -->
+        <main class="workspace-content">
+
+          <!-- ====================================================================
+               VIEW 1: LOGISTICS COMMAND DASHBOARD
+               ==================================================================== -->
+          <section id="view-dashboard" class="view-panel active">
+
+            <div class="transshipment-hero-banner">
+              <div class="transshipment-info">
+                <div class="transshipment-avatar">
+                  <span class="material-symbols-outlined" style="font-size: 28px;">warehouse</span>
+                </div>
+                <div>
+                  <div class="transshipment-name-row">
+                    <h2 class="transshipment-name">Kadodara Central Transshipment Hub</h2>
+                    <span class="live-shift-pill">
+                      <span class="live-pulse-dot amber"></span>
+                      LIVE SHIFT
+                    </span>
+                  </div>
+                  <div class="transshipment-meta">
+                    <span class="material-symbols-outlined" style="font-size: 16px; color: #ef4444;">pin_drop</span>
+                    <span>Abhinandan Nagar, Kadodara-Bardoli Express Corridor, Surat District (GJ-05)</span>
+                    <span style="opacity: 0.4;">•</span>
+                    <span class="font-mono" style="font-weight: 700;">GSTIN: 24COZPS7273E2Z5</span>
+                  </div>
+                </div>
+              </div>
+              <div class="transshipment-telemetry">
+                <button class="btn btn-outline btn-sm" style="background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.15);" onclick="app.refreshAll()">
+                  <span class="material-symbols-outlined" style="font-size: 17px;">sync</span>
+                  <span>Refresh Data</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 4-Column KPI Cards -->
+            <div class="kpi-row">
+              <div class="kpi-card">
+                <div class="kpi-top">
+                  <span class="kpi-title">Active In-Transit</span>
+                  <div class="kpi-icon-pill"><span class="material-symbols-outlined">local_shipping</span></div>
+                </div>
+                <div class="kpi-number" id="kpiInTransit">0</div>
+                <div class="kpi-bar"><div class="kpi-bar-fill" id="kpiTransitBar" style="width: 0%;"></div></div>
+                <div class="kpi-subtext"><span>Dockets</span><span id="kpiOutForDelivery">0 OFD</span></div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-top">
+                  <span class="kpi-title">Total Consignments</span>
+                  <div class="kpi-icon-pill"><span class="material-symbols-outlined">receipt_long</span></div>
+                </div>
+                <div class="kpi-number" id="kpiTotalShipments">0</div>
+                <div class="kpi-subtext"><span>All Bilties Generated</span></div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-top">
+                  <span class="kpi-title">Delivered & Verified</span>
+                  <div class="kpi-icon-pill"><span class="material-symbols-outlined" style="color: #15803d;">verified</span></div>
+                </div>
+                <div class="kpi-number" id="kpiDelivered" style="color: #15803d;">0</div>
+                <div class="kpi-bar"><div class="kpi-bar-fill" style="width: 0%; background: #15803d;" id="kpiDeliveredBar"></div></div>
+                <div class="kpi-subtext"><span id="kpiSuccessRate" style="color: #15803d; font-weight: 700;">0%</span><span>On-Time</span></div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-top">
+                  <span class="kpi-title">COD & Freight</span>
+                  <div class="kpi-icon-pill"><span class="material-symbols-outlined" style="color: var(--brand-amber);">payments</span></div>
+                </div>
+                <div class="kpi-number" id="kpiCodToCollect">₹0</div>
+                <div class="kpi-subtext"><span id="kpiCodCollected">₹0 collected</span></div>
+              </div>
+            </div>
+
+            <!-- Pipeline Filter Chips -->
+            <div class="pipeline-filter-bar">
+              <div class="pipeline-filter-chip active" onclick="app.filterByStatus('All', this)">
+                <span>All</span><span class="chip-counter" id="pipeAll">0</span>
+              </div>
+              <div class="pipeline-filter-chip" onclick="app.filterByStatus('Booked', this)">
+                <span>Booked</span><span class="chip-counter" id="pipeBooked">0</span>
+              </div>
+              <div class="pipeline-filter-chip" onclick="app.filterByStatus('In Transit', this)">
+                <span class="live-pulse-dot" style="width: 6px; height: 6px; background: #4338ca;"></span>
+                <span>In Transit</span><span class="chip-counter" id="pipeInTransit">0</span>
+              </div>
+              <div class="pipeline-filter-chip" onclick="app.filterByStatus('Out for Delivery', this)">
+                <span>Out for Delivery</span><span class="chip-counter" id="pipeOFD">0</span>
+              </div>
+              <div class="pipeline-filter-chip" onclick="app.filterByStatus('Delivered', this)">
+                <span>Delivered</span><span class="chip-counter" id="pipeDelivered">0</span>
+              </div>
+              <div class="pipeline-filter-chip" onclick="app.filterByStatus('Failed', this)">
+                <span>Exceptions</span><span class="chip-counter" id="pipeFailed">0</span>
+              </div>
+            </div>
+
+            <!-- Active Consignments Table -->
+            <div class="content-card">
+              <div class="card-header-bar">
+                <div class="card-heading">Active Dispatches & Consignments</div>
+                <button class="btn btn-outline btn-sm" onclick="app.switchView('shipments')">View All</button>
+              </div>
+              <div class="table-responsive">
+                <table class="ptms-table">
+                  <thead>
+                    <tr>
+                      <th>Tracking Number</th><th>Date</th><th>Sender & Origin</th><th>Receiver & Destination</th>
+                      <th>Service</th><th>Weight</th><th>Payment</th><th>Status</th><th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dashboardTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- VIEW 2: BOOK CONSIGNMENT -->
+          <section id="view-booking" class="view-panel">
+            <div class="view-header">
+              <div class="view-title-group">
+                <h1>Book New Consignment (LR / Bilty)</h1>
+                <p>Compute actual vs volumetric weight, calculate freight tariff, and generate official dispatch bilty.</p>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn btn-outline btn-sm" onclick="app.fillSampleBooking('textile')">Autofill Textile</button>
+                <button class="btn btn-outline btn-sm" onclick="app.fillSampleBooking('industrial')">Autofill Industrial</button>
+              </div>
+            </div>
+            <form id="bookingForm" onsubmit="app.handleBookingSubmit(event)">
+              <div class="form-grid-2">
+                <div class="content-card">
+                  <div class="card-header-bar">
+                    <div class="card-heading" style="display: flex; align-items: center; gap: 8px;">
+                      <span class="material-symbols-outlined" style="color: var(--brand-amber);">upload</span>
+                      <span>Consignor (Sender)</span>
+                    </div>
+                  </div>
+                  <div style="padding: 20px;">
+                    <div class="form-group"><label class="form-label">Sender Name *</label><input type="text" id="bookSenderName" class="form-input" required placeholder="e.g. Shree Ganesh Textiles"></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                      <div class="form-group"><label class="form-label">Contact Phone *</label><input type="tel" id="bookSenderPhone" class="form-input font-mono" required placeholder="9825144820"></div>
+                      <div class="form-group"><label class="form-label">GSTIN</label><input type="text" id="bookSenderGstin" class="form-input font-mono" placeholder="24AAACG1924L1Z2"></div>
+                    </div>
+                    <div class="form-group"><label class="form-label">Pickup Address *</label><textarea id="bookSenderAddress" class="form-textarea" required placeholder="Plot No, Industrial Estate"></textarea></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                      <div class="form-group"><label class="form-label">City *</label><input type="text" id="bookSenderCity" class="form-input" required value="Surat"></div>
+                      <div class="form-group"><label class="form-label">PIN Code *</label><input type="text" id="bookSenderPincode" class="form-input font-mono" required value="394221"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header-bar">
+                    <div class="card-heading" style="display: flex; align-items: center; gap: 8px;">
+                      <span class="material-symbols-outlined" style="color: #10b981;">download</span>
+                      <span>Consignee (Receiver)</span>
+                    </div>
+                  </div>
+                  <div style="padding: 20px;">
+                    <div class="form-group"><label class="form-label">Receiver Name *</label><input type="text" id="bookReceiverName" class="form-input" required placeholder="e.g. Royal Garments Store"></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                      <div class="form-group"><label class="form-label">Receiver Phone *</label><input type="tel" id="bookReceiverPhone" class="form-input font-mono" required placeholder="10-digit mobile"></div>
+                      <div class="form-group"><label class="form-label">Destination City *</label><input type="text" id="bookReceiverCity" class="form-input" required placeholder="e.g. Bardoli"></div>
+                    </div>
+                    <div class="form-group"><label class="form-label">Delivery Address *</label><textarea id="bookReceiverAddress" class="form-textarea" required placeholder="Shop No, Market, Road"></textarea></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                      <div class="form-group"><label class="form-label">State</label><input type="text" id="bookReceiverState" class="form-input" value="Gujarat"></div>
+                      <div class="form-group"><label class="form-label">PIN Code</label><input type="text" id="bookReceiverPincode" class="form-input font-mono" placeholder="394601"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cargo & Freight Card -->
+              <div class="content-card">
+                <div class="card-header-bar">
+                  <div class="card-heading">Cargo Specifications & Live Tariff Calculator</div>
+                  <span class="font-mono" style="font-size: 11px; color: var(--text-muted);">Volumetric: (L × W × H) / 5000</span>
+                </div>
+                <div style="padding: 20px;">
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 16px;">
+                    <div class="form-group"><label class="form-label">Package Description</label><input type="text" id="bookDescription" class="form-input" required value="Cotton Fabrics / Textile Bales"></div>
+                    <div class="form-group"><label class="form-label">Articles *</label><input type="number" id="bookCount" class="form-input font-mono" required value="5" min="1" oninput="app.calcFare()"></div>
+                    <div class="form-group"><label class="form-label">Actual Weight (kg) *</label><input type="number" step="0.1" id="bookActualWeight" class="form-input font-mono" required value="45.0" min="0.1" oninput="app.calcFare()"></div>
+                    <div class="form-group"><label class="form-label">Length (cm)</label><input type="number" id="bookLength" class="form-input font-mono" value="60" min="1" oninput="app.calcFare()"></div>
+                    <div class="form-group"><label class="form-label">Width (cm)</label><input type="number" id="bookWidth" class="form-input font-mono" value="40" min="1" oninput="app.calcFare()"></div>
+                    <div class="form-group"><label class="form-label">Height (cm)</label><input type="number" id="bookHeight" class="form-input font-mono" value="40" min="1" oninput="app.calcFare()"></div>
+                  </div>
+                  <div style="background: var(--bg-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+                    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+                      <div>
+                        <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); display: block;" class="font-mono">Volumetric</span>
+                        <strong class="font-mono" style="font-size: 16px; color: var(--text-main);" id="calcVolWeight">19.2 kg</strong>
+                      </div>
+                      <div>
+                        <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); display: block;" class="font-mono">Billable</span>
+                        <strong class="font-mono" style="font-size: 16px; color: var(--brand-amber);" id="calcBillableWeight">45.0 kg</strong>
+                      </div>
+                      <div>
+                        <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); display: block;" class="font-mono">Service</span>
+                        <select id="bookServiceType" class="form-select font-mono" style="padding: 3px 8px; font-size: 12px;" onchange="app.calcFare()">
+                          <option value="Direct Express Tempo" selected>Direct Express Tempo (LTL)</option>
+                          <option value="Standard Ground Transit">Standard Ground Transit</option>
+                          <option value="Full Truck Load (FTL)">Full Truck Load (FTL)</option>
+                        </select>
+                      </div>
+                      <div>
+                        <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); display: block;" class="font-mono">Payment</span>
+                        <select id="bookPaymentMode" class="form-select font-mono" style="padding: 3px 8px; font-size: 12px;" onchange="app.toggleCodField()">
+                          <option value="Paid" selected>Paid (Prepaid)</option>
+                          <option value="To Pay">To Pay</option>
+                          <option value="COD">Cash On Delivery</option>
+                        </select>
+                      </div>
+                      <div id="codAmountContainer" style="display: none;">
+                        <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); display: block;" class="font-mono">COD Amount (₹)</span>
+                        <input type="number" id="bookCodAmount" class="form-input font-mono" style="padding: 3px 8px; width: 110px;" value="2500">
+                      </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 18px;">
+                      <div style="text-align: right;">
+                        <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); display: block;" class="font-mono">Total Freight</span>
+                        <span class="font-mono" style="font-size: 26px; font-weight: 800; color: var(--text-main);" id="calcTotalFare">₹879</span>
+                      </div>
+                      <button type="submit" class="btn btn-primary" style="padding: 12px 24px; font-size: 14px;">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        <span>Generate Bilty (LR)</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <!-- VIEW 3: LIVE TRACKING -->
+          <section id="view-tracking" class="view-panel">
+            <div class="view-header">
+              <div class="view-title-group">
+                <h1>Consignment Status & Tracking</h1>
+                <p>Real-time vehicle telemetry, transit waypoint progress, and verified delivery chain.</p>
+              </div>
+            </div>
+            <div class="content-card" style="padding: 18px 20px; margin-bottom: 22px;">
+              <div style="display: flex; gap: 12px; max-width: 600px;">
+                <input type="text" id="trackInputNumber" class="form-input font-mono" placeholder="Enter Waybill # (e.g. PTMS-202610-XXXXXX)" style="font-size: 14px; font-weight: 700;">
+                <button class="btn btn-primary" onclick="app.handleTrackingSearch()">
+                  <span class="material-symbols-outlined">search</span><span>Track</span>
+                </button>
+              </div>
+            </div>
+            <div id="trackingDetailsBox" style="display: none;">
+              <div class="content-card">
+                <div class="card-header-bar">
+                  <div>
+                    <div class="font-mono" style="font-size: 20px; font-weight: 800; color: var(--brand-navy-950);" id="trackNumberHeading">PTMS-000000</div>
+                    <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 2px;" id="trackRouteHeading">Surat → Bardoli</div>
+                  </div>
+                  <div style="display: flex; gap: 10px; align-items: center;">
+                    <span id="trackStatusPill" class="status-pill in-transit">In Transit</span>
+                    <button class="btn btn-outline btn-sm" onclick="app.openStatusModal()">
+                      <span class="material-symbols-outlined" style="font-size: 16px;">edit</span><span>Update</span>
+                    </button>
+                  </div>
+                </div>
+                <div style="padding: 24px; display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+                  <div>
+                    <div class="card-heading" style="margin-bottom: 16px;">Lifecycle Milestones</div>
+                    <div id="trackingTimelineContainer" style="display: flex; flex-direction: column; gap: 18px; border-left: 2px solid var(--border-subtle); margin-left: 14px; padding-left: 20px;"></div>
+                  </div>
+                  <div style="background: var(--bg-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
+                    <div class="card-heading" style="font-size: 14px; margin-bottom: 12px;">Consignment Details</div>
+                    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+                      <div><span style="color: var(--text-muted);">Service:</span> <span id="trackServiceTier">Express</span></div>
+                      <div><span style="color: var(--text-muted);">Weight:</span> <span class="font-mono" id="trackBillableWeight">0 kg</span></div>
+                      <div><span style="color: var(--text-muted);">Payment:</span> <span id="trackPaymentSummary">Paid</span></div>
+                      <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border-strong);">
+                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Consignor → Consignee</div>
+                        <div style="font-weight: 700;" id="trackPartiesSummary">-</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- VIEW 4: ALL CONSIGNMENTS -->
+          <section id="view-shipments" class="view-panel">
+            <div class="view-header">
+              <div class="view-title-group"><h1>All Consignments Ledger</h1><p>Complete master ledger of all parcel bookings.</p></div>
+              <button class="btn btn-primary btn-sm" onclick="app.switchView('booking')"><span class="material-symbols-outlined" style="font-size: 17px;">add</span><span>New Booking</span></button>
+            </div>
+            <div class="content-card">
+              <div class="card-header-bar">
+                <input type="text" id="shipmentSearchInput" class="form-input" style="max-width: 300px;" placeholder="Search by LR, customer or phone..." oninput="app.renderShipmentsTable()">
+                <select id="shipmentFilterSelect" class="form-select font-mono" style="max-width: 180px; padding: 6px 12px; font-size: 12.5px;" onchange="app.renderShipmentsTable()">
+                  <option value="All" selected>All Statuses</option>
+                  <option value="Booked">Booked</option>
+                  <option value="In Transit">In Transit</option>
+                  <option value="Out for Delivery">Out for Delivery</option>
+                  <option value="Delivered">Delivered</option>
+                  <option value="Failed">Exceptions</option>
+                </select>
+              </div>
+              <div class="table-responsive">
+                <table class="ptms-table">
+                  <thead><tr><th>Waybill</th><th>Date</th><th>Sender</th><th>Receiver</th><th>Weight</th><th>Freight (₹)</th><th>Payment</th><th>Status</th><th>Actions</th></tr></thead>
+                  <tbody id="shipmentsMasterTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- VIEW 5: FLEET -->
+          <section id="view-fleet" class="view-panel">
+            <div class="view-header">
+              <div class="view-title-group"><h1>Fleet & Vehicle Operations</h1><p>Manage commercial carrier tempos, drivers, and manifests.</p></div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn btn-outline btn-sm" onclick="app.openAddDriverModal()"><span class="material-symbols-outlined" style="font-size: 17px;">person_add</span><span>Add Driver</span></button>
+                <button class="btn btn-primary btn-sm" onclick="app.openAddVehicleModal()"><span class="material-symbols-outlined" style="font-size: 17px;">add_circle</span><span>Register Vehicle</span></button>
+              </div>
+            </div>
+            <div class="fleet-grid" id="fleetCardsGrid"></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="content-card">
+                <div class="card-header-bar"><div class="card-heading">Vehicles</div><span class="status-pill in-transit" id="fleetVehicleCount">0</span></div>
+                <div class="table-responsive"><table class="ptms-table"><thead><tr><th>Plate</th><th>Model</th><th>Status</th></tr></thead><tbody id="fleetVehiclesTableBody"></tbody></table></div>
+              </div>
+              <div class="content-card">
+                <div class="card-header-bar"><div class="card-heading">Drivers</div><span class="status-pill delivered" id="fleetDriverCount">0</span></div>
+                <div class="table-responsive"><table class="ptms-table"><thead><tr><th>Name</th><th>Phone</th><th>License</th><th>Status</th></tr></thead><tbody id="fleetDriversTableBody"></tbody></table></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- VIEW 6: POD -->
+          <section id="view-pod" class="view-panel">
+            <div class="view-header"><div class="view-title-group"><h1>Proof of Delivery (POD)</h1><p>Capture consignee digital signature and settle COD.</p></div></div>
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px;">
+              <div class="content-card" style="padding: 24px;">
+                <form id="podSubmitForm" onsubmit="app.handlePodSubmit(event)">
+                  <div class="form-group"><label class="form-label">Select Consignment *</label>
+                    <select id="podParcelSelect" class="form-select font-mono" required onchange="app.handlePodParcelSelect(this.value)"><option value="">-- Choose --</option></select>
+                  </div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div class="form-group"><label class="form-label">Received By *</label><input type="text" id="podReceiverName" class="form-input" required placeholder="Name of person accepting"></div>
+                    <div class="form-group"><label class="form-label">Relationship *</label>
+                      <select id="podRelationship" class="form-select"><option value="Self" selected>Self</option><option value="Warehouse Incharge">Warehouse Incharge</option><option value="Store Manager">Store Manager</option><option value="Family Member">Family Member</option></select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                      <label class="form-label" style="margin: 0;">Digital Signature *</label>
+                      <button type="button" class="btn btn-outline btn-sm" onclick="app.clearPodCanvas()">Clear</button>
+                    </div>
+                    <div class="signature-wrapper"><canvas id="podCanvas"></canvas></div>
+                  </div>
+                  <div id="podCodPrompt" style="display: none; background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 16px;">
+                    <div style="font-weight: 700; color: #b45309; display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                      <span class="material-symbols-outlined">payments</span><span>COD Collection</span>
+                    </div>
+                    <div style="font-size: 13px; color: #92400e;">Collect <strong id="podCodAmountText" class="font-mono">₹0</strong> before handover.</div>
+                  </div>
+                  <div class="form-group"><label class="form-label">Notes</label><input type="text" id="podRemarks" class="form-input" placeholder="e.g. Delivered at front desk"></div>
+                  <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">
+                    <span class="material-symbols-outlined">check_circle</span><span>Confirm Delivery</span>
+                  </button>
+                </form>
+              </div>
+              <div class="content-card" style="padding: 24px;">
+                <div class="card-heading" style="margin-bottom: 14px;">Package Details</div>
+                <div id="podDetailsEmpty" style="color: var(--text-muted); font-size: 13px;">Select a consignment to preview details.</div>
+                <div id="podDetailsActive" style="display: none; font-size: 13px; flex-direction: column; gap: 10px;">
+                  <div><span style="color: var(--text-muted);">Waybill:</span> <strong class="font-mono" id="podDetailWaybill">-</strong></div>
+                  <div><span style="color: var(--text-muted);">Consignee:</span> <strong id="podDetailConsignee">-</strong></div>
+                  <div><span style="color: var(--text-muted);">Address:</span> <span id="podDetailAddress">-</span></div>
+                  <div><span style="color: var(--text-muted);">Articles:</span> <span id="podDetailArticles">-</span></div>
+                  <div><span style="color: var(--text-muted);">Weight:</span> <span class="font-mono" id="podDetailWeight">-</span></div>
+                  <div><span style="color: var(--text-muted);">Payment:</span> <span id="podDetailPayment">-</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- VIEW 7: BILLING -->
+          <section id="view-billing" class="view-panel">
+            <div class="view-header"><div class="view-title-group"><h1>Freight Billing & COD Settlement</h1><p>Reconcile COD, freight invoices, and accounts.</p></div></div>
+            <div class="kpi-row" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="kpi-card"><div class="kpi-top"><span class="kpi-title">Total Billed</span></div><div class="kpi-number" id="billingTotalRev">₹0</div></div>
+              <div class="kpi-card"><div class="kpi-top"><span class="kpi-title">COD Pending</span></div><div class="kpi-number font-mono" id="billingPendingCod" style="color: var(--brand-amber);">₹0</div></div>
+              <div class="kpi-card"><div class="kpi-top"><span class="kpi-title">COD Collected</span></div><div class="kpi-number font-mono" id="billingCollectedCod" style="color: #15803d;">₹0</div></div>
+            </div>
+            <div class="content-card">
+              <div class="card-header-bar"><div class="card-heading">Invoices & Charges</div></div>
+              <div class="table-responsive"><table class="ptms-table"><thead><tr><th>Invoice #</th><th>Customer</th><th>Date</th><th>Weight</th><th>Freight</th><th>Payment</th><th>Status</th><th>Action</th></tr></thead><tbody id="billingTableBody"></tbody></table></div>
+            </div>
+          </section>
+
+          <!-- VIEW 8: CUSTOMERS -->
+          <section id="view-customers" class="view-panel">
+            <div class="view-header"><div class="view-title-group"><h1>Client & Consignor Directory</h1><p>Registered consignors and account ledgers.</p></div></div>
+            <div class="content-card">
+              <div class="card-header-bar"><div class="card-heading">Commercial Accounts</div></div>
+              <div class="table-responsive"><table class="ptms-table"><thead><tr><th>Name</th><th>Mobile</th><th>GSTIN</th><th>City</th><th>Address</th><th>Bookings</th></tr></thead><tbody id="customersTableBody"></tbody></table></div>
+            </div>
+          </section>
+
+          <!-- VIEW 9: HISTORY -->
+          <section id="view-history" class="view-panel">
+            <div class="view-header"><div class="view-title-group"><h1>Delivery History & Audit Log</h1><p>Chronological operational event log.</p></div></div>
+            <div class="content-card">
+              <div class="card-header-bar"><div class="card-heading">Audit Trail</div></div>
+              <div class="table-responsive"><table class="ptms-table"><thead><tr><th>Timestamp</th><th>Waybill</th><th>Status</th><th>Location</th><th>Operator</th><th>Remarks</th></tr></thead><tbody id="historyTableBody"></tbody></table></div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODALS
+       ======================================================================== -->
+
+  <!-- BILTY MODAL -->
+  <div class="modal-overlay" id="biltyModal">
+    <div class="modal-box" style="max-width: 720px;">
+      <div class="modal-header">
+        <div class="modal-title">Consignment Note (Lorry Receipt / Bilty)</div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-primary btn-sm" onclick="window.print()"><span class="material-symbols-outlined" style="font-size: 16px;">print</span><span>Print</span></button>
+          <button class="modal-close-btn" onclick="app.closeModal('biltyModal')">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body" id="biltyPrintContainer" style="padding: 24px; background: #fff;"></div>
+    </div>
+  </div>
+
+  <!-- STATUS UPDATE MODAL -->
+  <div class="modal-overlay" id="statusModal">
+    <div class="modal-box">
+      <div class="modal-header"><div class="modal-title">Update Milestone</div><button class="modal-close-btn" onclick="app.closeModal('statusModal')">&times;</button></div>
+      <form onsubmit="app.handleStatusUpdateSubmit(event)">
+        <div class="modal-body">
+          <input type="hidden" id="statusModalParcelId">
+          <div class="form-group"><label class="form-label">New Status *</label>
+            <select id="statusModalNewStatus" class="form-select font-mono" required>
+              <option value="Received at Origin Hub">Received at Origin Hub</option>
+              <option value="In Transit">In Transit</option>
+              <option value="Arrived at Destination Hub">Arrived at Destination Hub</option>
+              <option value="Out for Delivery">Out for Delivery</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Delivery Attempt Failed">Delivery Attempt Failed</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Location *</label><input type="text" id="statusModalLocation" class="form-input" required value="Kadodara Central Hub"></div>
+          <div class="form-group"><label class="form-label">Remarks</label><input type="text" id="statusModalNotes" class="form-input" placeholder="e.g. Dispatched on shuttle"></div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-outline" onclick="app.closeModal('statusModal')">Cancel</button><button type="submit" class="btn btn-primary">Update</button></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADD VEHICLE MODAL -->
+  <div class="modal-overlay" id="addVehicleModal">
+    <div class="modal-box">
+      <div class="modal-header"><div class="modal-title">Register Vehicle</div><button class="modal-close-btn" onclick="app.closeModal('addVehicleModal')">&times;</button></div>
+      <form onsubmit="app.handleAddVehicleSubmit(event)">
+        <div class="modal-body">
+          <div class="form-group"><label class="form-label">Registration Number *</label><input type="text" id="newVehReg" class="form-input font-mono uppercase" required placeholder="GJ19Y9999"></div>
+          <div class="form-group"><label class="form-label">Vehicle Type *</label>
+            <select id="newVehType" class="form-select"><option value="14 Feet Eicher" selected>14 Feet Eicher LCV</option><option value="10 Feet Pickup Bolero">10 Feet Pickup Bolero</option><option value="Tata Ace Gold 750kg">Tata Ace Gold</option><option value="17 Feet Heavy Tempo">17 Feet Heavy Tempo</option></select>
+          </div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-outline" onclick="app.closeModal('addVehicleModal')">Cancel</button><button type="submit" class="btn btn-primary">Register</button></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADD DRIVER MODAL -->
+  <div class="modal-overlay" id="addDriverModal">
+    <div class="modal-box">
+      <div class="modal-header"><div class="modal-title">Add Driver</div><button class="modal-close-btn" onclick="app.closeModal('addDriverModal')">&times;</button></div>
+      <form onsubmit="app.handleAddDriverSubmit(event)">
+        <div class="modal-body">
+          <div class="form-group"><label class="form-label">Name *</label><input type="text" id="newDrvName" class="form-input" required placeholder="Rajesh Bhai Rathod"></div>
+          <div class="form-group"><label class="form-label">Mobile *</label><input type="tel" id="newDrvPhone" class="form-input font-mono" required placeholder="10-digit"></div>
+          <div class="form-group"><label class="form-label">License # *</label><input type="text" id="newDrvLicense" class="form-input font-mono uppercase" required placeholder="GJ0520210084921"></div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-outline" onclick="app.closeModal('addDriverModal')">Cancel</button><button type="submit" class="btn btn-primary">Add</button></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGOUT CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="logoutModal">
+    <div class="modal-box" style="max-width: 400px;">
+      <div class="modal-header"><div class="modal-title">Sign Out</div><button class="modal-close-btn" onclick="app.closeModal('logoutModal')">&times;</button></div>
+      <div class="modal-body" style="text-align: center; padding: 32px;">
+        <div style="width: 64px; height: 64px; background: #fef2f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+          <span class="material-symbols-outlined" style="font-size: 32px; color: #ef4444;">logout</span>
+        </div>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">Are you sure?</h3>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">You will be signed out of your PTMS session and redirected to the home page.</p>
+        <div style="display: flex; gap: 10px; justify-content: center;">
+          <button class="btn btn-outline" onclick="app.closeModal('logoutModal')">Cancel</button>
+          <button class="btn btn-danger" onclick="app.confirmLogout()">
+            <span class="material-symbols-outlined" style="font-size: 18px;">logout</span>
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOMER REGISTRATION MODAL -->
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal-box" style="max-width: 520px;">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="material-symbols-outlined" style="color: var(--brand-amber); font-size: 22px; vertical-align: -4px;">person_add</span>
+          Create Customer Account
+        </div>
+        <button class="modal-close-btn" onclick="app.closeModal('registerModal')">&times;</button>
+      </div>
+      <form onsubmit="app.handleCustomerRegister(event)">
+        <div class="modal-body" style="padding: 20px 24px;">
+          <div id="registerErrorMsg" class="login-error-msg" style="display:none;"></div>
+          <div id="registerSuccessMsg" style="display:none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; font-size: 13px; padding: 10px 14px; border-radius: 8px; margin-bottom: 16px;"></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="regName" class="form-input" required placeholder="e.g. Rajesh Patel">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile Number *</label>
+              <input type="tel" id="regPhone" class="form-input font-mono" required placeholder="10-digit mobile">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" id="regEmail" class="form-input" required placeholder="yourname@email.com">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="form-group">
+              <label class="form-label">Password *</label>
+              <input type="password" id="regPassword" class="form-input" required placeholder="Min 6 characters" minlength="6">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Confirm Password *</label>
+              <input type="password" id="regConfirmPassword" class="form-input" required placeholder="Re-enter password" minlength="6">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address *</label>
+            <input type="text" id="regAddress" class="form-input" required placeholder="Street, Locality, Area">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+            <div class="form-group">
+              <label class="form-label">City *</label>
+              <input type="text" id="regCity" class="form-input" required placeholder="e.g. Surat">
+            </div>
+            <div class="form-group">
+              <label class="form-label">State *</label>
+              <input type="text" id="regState" class="form-input" required value="Gujarat">
+            </div>
+            <div class="form-group">
+              <label class="form-label">PIN Code *</label>
+              <input type="text" id="regPincode" class="form-input font-mono" required placeholder="e.g. 394305">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">GSTIN (Optional)</label>
+            <input type="text" id="regTaxId" class="form-input font-mono" placeholder="e.g. 24AAACG1924L1Z2">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="app.closeModal('registerModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary">
+            <span class="material-symbols-outlined" style="font-size: 18px;">person_add</span>
+            Create Account
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FORGOT PASSWORD MODAL -->
+  <div class="modal-overlay" id="forgotPasswordModal">
+    <div class="modal-box" style="max-width: 460px;">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="material-symbols-outlined" style="color: var(--brand-amber); font-size: 22px; vertical-align: -4px;">lock_reset</span>
+          Forgot Password
+        </div>
+        <button class="modal-close-btn" onclick="app.closeModal('forgotPasswordModal')">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 20px 24px;">
+        <div id="forgotErrorMsg" class="login-error-msg" style="display:none;"></div>
+        <div id="forgotSuccessMsg" style="display:none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; font-size: 13px; padding: 10px 14px; border-radius: 8px; margin-bottom: 16px;"></div>
+
+        <!-- Step 1: Send OTP -->
+        <div id="forgotStep1">
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Enter your registered mobile number or email address to receive a one-time verification code (OTP).</p>
+          <div class="form-group">
+            <label class="form-label">Mobile Number / Email *</label>
+            <input type="text" id="forgotIdentifier" class="form-input" required placeholder="e.g. 9824621221 or admin@deepaktempo.in">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Send OTP via</label>
+            <select id="forgotChannel" class="form-select">
+              <option value="SMS" selected>SMS</option>
+              <option value="Email">Email</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary" style="width: 100%;" onclick="app.handleForgotSendOTP()">
+            <span class="material-symbols-outlined" style="font-size: 18px;">send</span>
+            Send OTP
+          </button>
+        </div>
+
+        <!-- Step 2: Verify OTP & Reset Password -->
+        <div id="forgotStep2" style="display: none;">
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Enter the 6-digit OTP sent to <strong id="forgotDestDisplay"></strong> and set your new password.</p>
+          <div class="form-group">
+            <label class="form-label">6-Digit OTP Code *</label>
+            <input type="text" id="forgotOTP" class="form-input font-mono" required placeholder="e.g. 123456" maxlength="6" style="font-size: 20px; text-align: center; letter-spacing: 8px;">
+          </div>
+          <div id="forgotDemoOtpHint" style="display: none; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.2); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 12px; color: var(--brand-amber);">
+            <strong>Demo OTP:</strong> <span id="forgotDemoOtpValue" class="font-mono" style="font-size: 14px;"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">New Password *</label>
+            <input type="password" id="forgotNewPassword" class="form-input" required placeholder="Min 6 characters" minlength="6">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirm New Password *</label>
+            <input type="password" id="forgotConfirmPassword" class="form-input" required placeholder="Re-enter new password" minlength="6">
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button type="button" class="btn btn-outline" style="flex: 1;" onclick="app.forgotGoBackToStep1()">
+              ← Back
+            </button>
+            <button type="button" class="btn btn-primary" style="flex: 2;" onclick="app.handleForgotVerifyOTP()">
+              <span class="material-symbols-outlined" style="font-size: 18px;">lock_reset</span>
+              Reset Password
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Load App JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>

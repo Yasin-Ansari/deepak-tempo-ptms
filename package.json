@@ -1,0 +1,22 @@
+﻿{
+  "name": "parcel-transport-system",
+  "version": "1.0.0",
+  "description": "Enterprise Parcel Transport & Logistics Management System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "keywords": [
+    "parcel",
+    "logistics",
+    "transport",
+    "tracking",
+    "proof-of-delivery",
+    "fleet-management"
+  ],
+  "author": "Deepak Tempo Service",
+  "license": "ISC"
+}

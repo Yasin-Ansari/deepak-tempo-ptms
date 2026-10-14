@@ -1,0 +1,18 @@
+# Render.com Blueprint Deployment Configuration
+# Deepak Tempo Service - Parcel Transport Management System (PTMS)
+
+services:
+  - type: web
+    name: deepak-tempo-ptms
+    runtime: node
+    plan: free
+    region: singapore # High speed for India / Gujarat users
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
