@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "data/**,public/**"
-    }
-  },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
       "source": "/(.*)",
-      "destination": "/public/$1"
+      "destination": {
+        "type": "service",
+        "service": "deepak-tempo-ptms"
+      }
     }
-  ]
+  ],
+  "services": {
+    "deepak-tempo-ptms": {
+      "root": ".",
+      "entrypoint": "server.js"
+    }
+  }
 }
