@@ -1,1 +1,67 @@
-﻿[]
+[
+  {
+    "id": "USR-001",
+    "username": "admin",
+    "email": "admin@deepaktempo.in",
+    "password": "pbkdf2-sha512:310000:decc6bc3f218cfadf7f47a75945d31c6:eb1e37d1d22c4ad42dc228cdacafdf0804b5b71a6a19a9d25b9e5a5ddd5c52182f849d86be69ccabdf0f90172c4e2ff3264a09fc84188f03dc3f01ee0ecebf79",
+    "name": "Deepak Singh (Owner)",
+    "role": "Admin",
+    "phone": "98246 21221"
+  },
+  {
+    "id": "USR-002",
+    "username": "booking",
+    "email": "booking@deepaktempo.in",
+    "password": "pbkdf2-sha512:310000:836edc2c75eb178b52ef1a5b465404ef:8f7ec9e939c3659ea3ad57a19e96efc6c221434bd80c8f221d16842fbcfdd3d8f9f8ede96a51f76bd4c1bdec786b89866522de2053937fba4a5ba8ad2ff8a5da",
+    "name": "Booking Staff",
+    "role": "Booking Staff",
+    "phone": "70961 47585"
+  },
+  {
+    "id": "USR-003",
+    "username": "hub",
+    "email": "hub@deepaktempo.in",
+    "password": "pbkdf2-sha512:310000:6d1c20bd093a2477ba5042d5b2cebd98:59a91127d47b11afdf4a561e9bfbfaeb2d56a5bcd429f487484de1fb28b1a69b04e3b911d7d246f989ae4762a3c9792a01d633b8de09660bdda2051fdd54ba2a",
+    "name": "Hub Staff",
+    "role": "Hub/Operations Staff",
+    "phone": "98246 21221"
+  },
+  {
+    "id": "USR-004",
+    "username": "dispatcher",
+    "email": "dispatch@deepaktempo.in",
+    "password": "pbkdf2-sha512:310000:8514636898e122e52876489aa3bf9ad6:142a38ab11757a7af75877ada7eca924b0a6fe1728dcdd7aca491c36329b6604013786ce156fc45e11f700ab7317cd7d0c47c14389458d546734ce4d32e56a83",
+    "name": "Dispatcher",
+    "role": "Dispatcher",
+    "phone": "70961 47585"
+  },
+  {
+    "id": "USR-005",
+    "username": "driver",
+    "email": "driver@deepaktempo.in",
+    "password": "pbkdf2-sha512:310000:84c881e0dd7b2b1ad844e8a49129ad52:f67de1f3b597bde1c31802bc1ec47512ef7495e3dba74712859f3bec1aa6cc872e2fedffd8ced735488c0fd904649262a9a05192a1fb7c1a03447b449edbe229",
+    "name": "Driver",
+    "role": "Driver",
+    "driverId": "DRV-001",
+    "phone": "98246 21221"
+  },
+  {
+    "id": "USR-006",
+    "username": "accounts",
+    "email": "accounts@deepaktempo.in",
+    "password": "pbkdf2-sha512:310000:ec12ac256a0affac8b851900d67e1251:191e01ef43a41eb38d0d4a03916178ec845b020eb6bfce8e575906e63578be3dd72b22f47512f0ed287e461dc54cf2e10752c0f37a19129a9d764cbac442be8c",
+    "name": "Accounts Staff",
+    "role": "Accounts Staff",
+    "phone": "70961 47585"
+  },
+  {
+    "id": "USR-007",
+    "username": "customer",
+    "email": "customer@deepaktempo.in",
+    "password": "pbkdf2-sha512:310000:9d80c6b61d08a3ecf35247d7818ca7c4:5e8fe7b2647417417eb5702e76bd32a2d678a567c32efbae7be2bd196508afc3839ce512336cb272d872375fdc85807baf499eab29281a39eb0ba996902aad95",
+    "name": "Customer",
+    "role": "Customer",
+    "customerId": "CUST-001",
+    "phone": "98246 21221"
+  }
+]

@@ -1,1 +1,30 @@
-﻿[]
+[
+  {
+    "id": "VEH-001",
+    "regNumber": "GJ19Y3729",
+    "type": "14 Feet Eicher",
+    "status": "Available",
+    "createdAt": "2026-10-18T11:48:52.809Z"
+  },
+  {
+    "id": "VEH-002",
+    "regNumber": "GJ19Y7669",
+    "type": "10 Feet Pickup Bolero",
+    "status": "Available",
+    "createdAt": "2026-10-18T11:48:52.809Z"
+  },
+  {
+    "id": "VEH-003",
+    "regNumber": "GJ19Z3756",
+    "type": "10 Feet Pickup Bolero",
+    "status": "Available",
+    "createdAt": "2026-10-18T11:48:52.809Z"
+  },
+  {
+    "id": "VEH-004",
+    "regNumber": "GJ19Y6151",
+    "type": "14 Feet Eicher",
+    "status": "Available",
+    "createdAt": "2026-10-18T11:48:52.809Z"
+  }
+]

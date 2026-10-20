@@ -1,1 +1,80 @@
-﻿[]
+[
+  {
+    "id": "PRCL-282356-06EE16",
+    "trackingNumber": "PTMS-202610-464952",
+    "carrierName": "Deepak Tempo Service",
+    "customerId": null,
+    "createdByUserId": null,
+    "bookingDate": "2026-10-18T11:51:22.356Z",
+    "serviceType": "Full Truck Load (FTL)",
+    "status": "Booked",
+    "package": {
+      "category": "General Cargo",
+      "description": "Cotton Fabrics / Textile Bales",
+      "declaredValue": 0,
+      "insured": false,
+      "dimensions": {
+        "length": 60,
+        "width": 40,
+        "height": 40
+      },
+      "actualWeight": 50,
+      "volumetricWeight": 19.2,
+      "billableWeight": 50,
+      "fragile": false
+    },
+    "sender": {
+      "customerId": null,
+      "name": "kartikey singh",
+      "phone": "7048700224",
+      "email": "",
+      "address": "77 tirupati society ,kadodara,surat",
+      "city": "Surat",
+      "state": "Gujarat",
+      "pincode": "394327"
+    },
+    "receiver": {
+      "name": "Kartikeysingh",
+      "phone": "7863048474",
+      "alternatePhone": "",
+      "email": "",
+      "address": "56 number room",
+      "landmark": "",
+      "city": "bardoli",
+      "state": "Gujarat",
+      "pincode": "394305",
+      "instructions": ""
+    },
+    "pricing": {
+      "freightCharges": 7500,
+      "fuelSurcharge": 750,
+      "handlingFee": 50,
+      "insuranceFee": 0,
+      "tax": 1494,
+      "totalAmount": 9794
+    },
+    "payment": {
+      "mode": "COD",
+      "status": "Pending",
+      "collectedAt": null,
+      "collectedBy": null,
+      "transactionRef": ""
+    },
+    "dispatch": {
+      "currentHub": "Surat Main Hub",
+      "destinationHub": "bardoli Regional Hub",
+      "assignedDriverId": null,
+      "assignedVehicleId": null,
+      "deliveryRunSheetId": null,
+      "estimatedDelivery": "2026-10-20T11:51:22.357Z"
+    },
+    "delivery": {
+      "attempts": 0,
+      "deliveredAt": null,
+      "deliveredTo": null,
+      "relationship": null,
+      "podSignature": null,
+      "failureReason": null
+    }
+  }
+]
