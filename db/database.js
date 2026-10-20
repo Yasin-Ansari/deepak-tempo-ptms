@@ -2,9 +2,51 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+// Resolve database directory. In serverless or containerized environments where
+// the root directory is read-only (e.g. AWS Lambda / Vercel), fall back to /tmp/ptms-data
+// while automatically preserving seed tables.
+const SEED_DIR = path.join(__dirname, '..', 'data');
+let DATA_DIR = SEED_DIR;
+
+function isDirWritable(dir) {
+  try {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    const testFile = path.join(dir, `.write-test-${Date.now()}`);
+    fs.writeFileSync(testFile, 'ok', 'utf8');
+    fs.unlinkSync(testFile);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+if (!isDirWritable(DATA_DIR)) {
+  const tmpBase = process.env.TMPDIR || process.env.TEMP || '/tmp';
+  const fallbackDir = path.join(tmpBase, 'ptms-data');
+  try {
+    if (!fs.existsSync(fallbackDir)) {
+      fs.mkdirSync(fallbackDir, { recursive: true });
+    }
+    // Copy seed JSON data files to writable directory
+    if (fs.existsSync(SEED_DIR)) {
+      const files = fs.readdirSync(SEED_DIR);
+      for (const file of files) {
+        if (file.endsWith('.json')) {
+          const src = path.join(SEED_DIR, file);
+          const dest = path.join(fallbackDir, file);
+          if (!fs.existsSync(dest)) {
+            fs.copyFileSync(src, dest);
+          }
+        }
+      }
+    }
+    DATA_DIR = fallbackDir;
+    console.log(`[Storage] Read-only filesystem detected. Initialized writable database at: ${DATA_DIR}`);
+  } catch (err) {
+    console.error('[Storage] Error setting up fallback writable directory:', err);
+  }
 }
 
 function getFilePath(table) {

@@ -621,10 +621,22 @@ app.get('/api/analytics', requireRole(['Admin', 'Accounts Staff', 'Dispatcher', 
   res.json(db.getAnalytics());
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Deepak Tempo Service (PTMS) Server live at http://localhost:${PORT}`);
-  console.log(`   Carrier: ${db.COMPANY_NAME}`);
-  console.log(`   System:  ${db.SYSTEM_NAME}`);
-  console.log(`   Owner:   ${db.BUSINESS.owner} (${db.BUSINESS.mobile1} | ${db.BUSINESS.mobile2})`);
-  console.log(`   GSTIN:   ${db.BUSINESS.gstin}`);
+app.use((err, req, res, next) => {
+  console.error('[PTMS Error]', err);
+  const status = err.statusCode || err.status || 500;
+  res.status(status).json({
+    error: err.message || 'Internal Server Error'
+  });
 });
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`✅ Deepak Tempo Service (PTMS) Server live at http://localhost:${PORT}`);
+    console.log(`   Carrier: ${db.COMPANY_NAME}`);
+    console.log(`   System:  ${db.SYSTEM_NAME}`);
+    console.log(`   Owner:   ${db.BUSINESS.owner} (${db.BUSINESS.mobile1} | ${db.BUSINESS.mobile2})`);
+    console.log(`   GSTIN:   ${db.BUSINESS.gstin}`);
+  });
+}
+
+module.exports = app;
